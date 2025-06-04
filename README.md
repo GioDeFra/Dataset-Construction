@@ -17,3 +17,5 @@ Required Sections to Include:
  • 4.8 Undesirable effects (side effects)
  • 4.9 Overdose
  • 6.2 Incompatibilities
+
+To query the NOSQL data using an LLM, OLLAMA has been used. For futher information about the problem check ' 
