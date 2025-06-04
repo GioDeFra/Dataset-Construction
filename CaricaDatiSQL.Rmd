@@ -1,0 +1,27 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+finale<-finale[,-9]
+```
+
+```{r}
+write.csv(finale,"C:\\Users\\giovi\\Desktop\\finale1.csv", row.names = FALSE)
+```
+
+```{r}
+library(DBI)
+library(odbc)
+
+con <- dbConnect(odbc::odbc(),
+                 Driver = "ODBC Driver 17 for SQL Server",
+                 Server = "localhost\\SQLEXPRESS",  # o il tuo server/istanza
+                 Database = "Progetto",
+                 Trusted_Connection = "Yes")
+```
+
+```{r}
+dbWriteTable(con, "Aifa_GroupH_1-333", finale, overwrite = TRUE, row.names = FALSE)
+```
+
